@@ -68,6 +68,14 @@
 
 
 # print (square(4))
+
+
+import converters
+weight = float(input(f"Enter the weight: "))
+print(converters.lbs_to_kg(weight))
+
+
+
     
 
 
