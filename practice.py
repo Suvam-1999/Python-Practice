@@ -70,9 +70,29 @@
 # print (square(4))
 
 
+# import converters
+# ask = int(input("Enter 1 for kg_to_lbs\nEnter 2 for lbs_to_kg : "))
+          
+# if ask == 1 :
+#     weight = float(input("Enter weights in kg : "))
+#     print (f"Your weight is {converters.kg_to_lbs(weight)} in lbs")
+
+# elif ask == 2 :
+#     weight = float(input("Enter weights in lbs : "))
+#     print (f"Your weight is {converters.lbs_to_kg(weight)} in kg")
+
+# else :
+#     print ("Invalid number")
+
+
 import converters
-weight = float(input(f"Enter the weight: "))
-print(converters.lbs_to_kg(weight))
+
+num = [13, 20, 39, 45, 58]
+
+print (converters.find_max(num))
+
+
+
 
 
 
