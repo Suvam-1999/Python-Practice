@@ -8,7 +8,7 @@ def find_max(num):
     for number in num :
         if number > max :
             max = number
-    print (max)
+    return max
     
 
     

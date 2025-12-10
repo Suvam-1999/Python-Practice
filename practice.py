@@ -85,20 +85,19 @@
 #     print ("Invalid number")
 
 
-import converters
+# from converters import find_max
 
-num = [13, 20, 39, 45, 58]
+# num = [13, 20, 39, 45, 58]
 
-print (converters.find_max(num))
-
-
+# print (find_max(num))
 
 
-
-
+import random
+class Dice():
+    def roll(self):
+        first = random.randint(1,6)
+        second = random.randint(1,6)
+        return first, second
     
-
-
-
-
-
+dice = Dice()
+print (dice.roll())
