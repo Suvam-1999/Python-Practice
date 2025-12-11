@@ -14,7 +14,7 @@
 #UN and PW should be saved in list
 
 users_list = {
-    "suvam" : "1234"
+    "suvam" : "pass"
 }
 class Bank:
     def signup(self):
@@ -35,6 +35,9 @@ class Bank:
             print("Account not found, signup instead")
             return False
         if users_list[user_name] == user_password:
+            print(f"Welcome back !!! {user_name}")
+            return True
+        else :
             while users_list[user_name] != user_password:
                 print("Wrong password, try again")
                 user_password = input("Enter password : ")
@@ -50,12 +53,14 @@ class Bank:
             choice = input("Enter choice: ")
             
             if choice == '1':
-                success = bank.login()
+                success = self.login()
                 if success:
+                    bank.bank_balance()
                     break
             elif choice == '2':
-                success = bank.signup()
+                success = self.signup()
                 if success:
+                    bank.bank_balance()
                     break
             elif choice == '3':
                 print("Goodbye!")
@@ -64,8 +69,34 @@ class Bank:
                 print("Invalid choice, try again.")
             
             
+    def bank_balance(self):
+        current_balance = 100
+        print(f"Current balance : {current_balance}")
+        while True:
+            amount = self.menu2()
+            current_balance += amount 
+            print(f"Current balance : {current_balance }")
+            break
+        
+    
+    def menu2(self):
+        choice = int(input("Enter 1 to deposit \nEnter 2 to withdraw : "))
+        if choice == 1:
+            deposit_amount = float(input(f"Enter amount : "))
+            print(f"{deposit_amount} has been added.")
+            return deposit_amount
+        
+        elif choice == 2:   
+            withdraw_amount = float(input(f"Enter amount : "))
+            print(f"{withdraw_amount} has been deducted.")
+            return -withdraw_amount
+
+        else:
+            print ("no")
+            
 
 bank = Bank()
 bank.menu()
+
 
 
