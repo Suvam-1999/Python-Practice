@@ -70,12 +70,20 @@ class Bank:
             
             
     def bank_balance(self):
+        initial_balance = 0
         current_balance = 100
+        maximum_limit = 10000
         print(f"Current balance : {current_balance}")
         while True:
             amount = self.menu2()
-            current_balance += amount 
-            print(f"Current balance : {current_balance }")
+            current_balance += amount
+            if current_balance < maximum_limit:
+                if current_balance != initial_balance:
+                    print(f"Current balance : {current_balance }")
+                elif(current_balance < initial_balance):
+                    print("Limit exceeded")
+            else:
+                print("Limit exceeded")
             break
         
     
